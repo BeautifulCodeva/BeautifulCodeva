@@ -1,4 +1,4 @@
-# oie-resources
+# BeautifulCodeva
 
 Collection of independent libraries on top of Spring Boot to provide a faster setup of jvm microservices.
 
