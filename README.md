@@ -1,4 +1,4 @@
-# edison-microservice
+# oie-resources
 
 Collection of independent libraries on top of Spring Boot to provide a faster setup of jvm microservices.
 
@@ -6,13 +6,13 @@ Collection of independent libraries on top of Spring Boot to provide a faster se
 
 ## Status
 
-![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fraw.githubusercontent.com%2Fotto-de%2Fedison-microservice%2Fmain%2FOSSMETADATA)
-[![Build](https://github.com/otto-de/edison-microservice/actions/workflows/build-main.yml/badge.svg)](https://github.com/otto-de/edison-microservice/actions?query=workflow%3Abuild-main)
-[![codecov](https://codecov.io/gh/otto-de/edison-microservice/branch/master/graph/badge.svg)](https://codecov.io/gh/otto-de/edison-microservice)
-[![Known Vulnerabilities](https://snyk.io/test/github/otto-de/edison-microservice/badge.svg)](https://snyk.io/test/github/otto-de/edison-microservice)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/otto-de/edison-microservice/badge)](https://securityscorecards.dev/viewer/?uri=github.com/otto-de/edison-microservice)
+![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fraw.githubusercontent.com%2Fotto-de%2Foie-resources%2Fmain%2FOSSMETADATA)
+[![Build](https://github.com/otto-de/oie-resources/actions/workflows/build-main.yml/badge.svg)](https://github.com/otto-de/oie-resources/actions?query=workflow%3Abuild-main)
+[![codecov](https://codecov.io/gh/otto-de/oie-resources/branch/master/graph/badge.svg)](https://codecov.io/gh/otto-de/oie-resources)
+[![Known Vulnerabilities](https://snyk.io/test/github/otto-de/oie-resources/badge.svg)](https://snyk.io/test/github/otto-de/oie-resources)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/otto-de/oie-resources/badge)](https://securityscorecards.dev/viewer/?uri=github.com/otto-de/oie-resources)
 [![Maven Central](https://img.shields.io/maven-central/v/de.otto.edison/edison-core?label=maven-central)](https://search.maven.org/search?q=g:de.otto%20a:edison-core%20v:RELEASE%20p:jar)
-[![license](https://img.shields.io/github/license/otto-de/edison-microservice.svg)](./LICENSE)
+[![license](https://img.shields.io/github/license/otto-de/oie-resources.svg)](./LICENSE)
 
 Have a look at the [release notes](CHANGELOG.md) for details about updates and changes.
 
@@ -23,7 +23,7 @@ The libraries are used in different projects at OTTO.
 It's purpose is to provide a common implementation for cross-cutting requirements like:
 
 * Health checks that are used to tell the load balancer or mesos platform whether or not a service is healthy.
-* A [status page/document](https://github.com/otto-de/edison-microservice/tree/master/edison-core) that is used to give information about the current state of the service. Status information also include details about sub-components, background jobs like imports, and so on.
+* A [status page/document](https://github.com/otto-de/oie-resources/tree/master/edison-core) that is used to give information about the current state of the service. Status information also include details about sub-components, background jobs like imports, and so on.
 * A simple job handling library that is used to run asynchronous background jobs, which for example can be used to run data imports from other systems.
 * An optional MongoDB-based implementation of a JobRepository
 * Support for MongoDB-based repositories in case you do not like Spring Data
@@ -36,7 +36,7 @@ It's purpose is to provide a common implementation for cross-cutting requirement
 
 [Semantic Versioning v2.0.0](http://semver.org/spec/v2.0.0.html) is used to specify the version numbers.
 
-This project maintains its roadmap with [issues](https://github.com/otto-de/edison-microservice/issues) and [milestones](https://github.com/otto-de/edison-microservice/milestones).
+This project maintains its roadmap with [issues](https://github.com/otto-de/oie-resources/issues) and [milestones](https://github.com/otto-de/oie-resources/milestones).
 
 **3.4.x**: Edison Microservices for Spring Boot 3.4.x &#10004; - Compatible with Java 17 and greater
 
@@ -64,7 +64,7 @@ When migrating, take care of the following adjustments:
     * If you want to use the behaviour of Edison 1.x, which hosts all management endpoints below `/internal`, you have to 
       configure `management.endpoints.web.base-path=/internal` in your `application.yml`
 * Remove dependencies to the [edison-aws Project](https://github.com/otto-de/edison-aws), which will be deprecated some time in the future. 
-  Necessary functionality was transferred to a submodule of `edison-microservice` (named `edison-aws`).
+  Necessary functionality was transferred to a submodule of `oie-resources` (named `edison-aws`).
 * If you have used `gradlew bootRepackage` for packaging your application so far, you have to migrate this to `gradlew bootJar`.
 * Refactor calls made through the AWS SDK, which got updated in the process of the new major version of edison and this
   will most probably break prior code that relied on the AWS SDK.
